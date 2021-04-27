@@ -1,0 +1,96 @@
+@import '../../styles/vairable.less';
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 0px #0004, 0px 8px 16px -2px #0004;
+
+  &-image {
+    position: relative;
+    padding-top: calc(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+
+    & > img {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &-info {
+    display: flex;
+    min-height: 72px;
+    color: #fff;
+    background-color: @card-info-color;
+
+    &-collection {
+      flex: 3 0 0%;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 60% 40%;
+      height: 100%;
+      padding: 8px 16px;
+
+      & > div {
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      text-overflow: ellipsis;
+    }
+
+    &-value {
+      font-size: 14px;
+      text-overflow: ellipsis;
+    }
+
+    &-likes-views {
+      flex: 1 0 0%;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 60% 40%;
+      justify-content: flex-end;
+      min-height: 72px;
+      padding: 8px 16px;
+
+      & > div {
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        & > span {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &-likes {
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: #00ab55;
+      }
+    }
+
+    &-views {
+      text-overflow: ellipsis;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 2px 0px #000a, 0px 16px 32px -4px #000a;
+  }
+}
